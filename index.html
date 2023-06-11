@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="./css/ui.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <title>PEPE-AI</title>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="w-full fixed z-10">
+        <div class="bg-white bg-opacity-70 shadow backdrop-filter backdrop-blur-lg border-gray-200">
+            <div class="max-w-6xl mx-auto px-4 py-1 flex justify-between items-center">
+                <a id="home" class="cursor-pointer">
+                    <div class="flex">                
+                        <div>
+                            <img src="./img/icon.png" class="w-8 py-4">
+                        </div>
+                        <span class="p-4 font-bold text-gray-700">PEPE-AI</span>            
+                    </div>
+                </a>
+                <div class="hidden md:flex text-gray-700">
+                    <div class="p-4"><a id="aboutLink" class="border-b-2 border-transparent hover:border-gray-700 py-1 hover:text-black cursor-pointer">關於</a></div>
+                    <div class="p-4"><a id="upLink" class="border-b-2 border-transparent hover:border-gray-700 py-1 hover:text-black cursor-pointer">PE-AI預測</a></div>
+                    <div class="p-4"><a id="faqLink" class="border-b-2 border-transparent hover:border-gray-700 py-1 hover:text-black cursor-pointer">說明&問題</a></div>
+                    <div class="p-4"><a id="" class="border-b-2 border-transparent hover:border-gray-700 py-1 hover:text-black cursor-pointer">隨喜贊助</a></div>
+                </div>
+                <div class="md:hidden flex">
+                    <button class="more-button">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>        
+        <div class="more-menu text-gray-700 hidden md:hidden">
+            <div class="bg-white bg-opacity-70 shadow backdrop-filter backdrop-blur-lg border-gray-200">
+                <a id="aboutLinkMobile"><div class="text-lg px-4 py-1 hover:bg-gray-100 hover:bg-opacity-50 hover:text-gray-900">關於</div></a>
+                <a id="upLinkMobile"><div class="text-lg px-4 py-1 hover:bg-gray-100 hover:bg-opacity-50 hover:text-gray-900">PE-AI預測</div></a>
+                <a id="faqLinkMobile"><div class="text-lg px-4 py-1 hover:bg-gray-100 hover:bg-opacity-50 hover:text-gray-900">說明&問題</div></a>
+                <a id=""><div class="text-lg px-4 py-1 hover:bg-gray-100 hover:bg-opacity-50 hover:text-gray-900">隨喜贊助</div></a>
+            </div>            
+            <div class="blankArea bg-transparent h-screen filter blur-none"></div>
+        </div>
+    </nav>
+    <div class="hidden lg:flex flex w-full h-screen flex bg-cover bg-right md:bg-top h-screen bg-no-repeat items-center" style="background-image: url(./img/background.png); background-size: cover; background-position: center;">            
+        <div class="w-2/5 flex h-screen items-end">
+            <img class="w-auto px-5" src="./img/mememan.png" alt="">
+        </div>
+        <div class="w-1/5 h-full flex flex-col filter drop-shadow-2xl">
+                <div class="h-1/2"></div>
+                <div class="h-1/2 w-full flex items-end justify-center">
+                    <div class="h-1/3 flex justify-center">
+                        <div class="mr-8">
+                            <button id="startButton" class="bg-yellow-500 px-4 py-2 text-2xl rounded-lg text-white font-bold shadow ring ring-yellow-500 ring-opacity-50 bg-gradient-to-b hover:from-yellow-400 hover:to-red-400 hover:from-yellow-400 hover:to-red-400">立刻使用預測</button>
+                        </div>
+                    </div>
+                </div>
+        </div>                            
+    </div>
+    <div class="hidden md:flex lg:hidden flex w-full h-screen flex bg-cover bg-right md:bg-top h-screen bg-no-repeat items-center" style="background-image: url(./img/background.png); background-size: cover; background-position: center;">            
+            <div class="w-1/2 flex h-screen items-end">
+                <img class="w-auto h-4/5 px-5" src="./img/mememan.png" alt="">
+            </div>
+            <div class="w-1/2 h-full flex flex-col">
+                <div class="h-1/2"></div>
+                <div class="h-1/2 w-full flex flex-col">
+                    <div class="flex justify-center"><span class="text-white font-bold text-4xl"></span></div>
+                    <div class="h-1/3 p-1 flex justify-center"><span class="text-white font-bold text-2xl"></span></div>
+                    <div class="h-1/2 flex justify-center">
+                        <div>
+                            <button id="startButton" class="bg-yellow-500 px-4 py-2 text-2xl rounded-lg text-white font-bold shadow ring ring-yellow-500 ring-opacity-50 bg-gradient-to-b hover:from-yellow-400 hover:to-red-400">立刻使用預測</button>
+                        </div>
+                    </div>
+                </div>                                  
+            </div>                            
+    </div>
+    <div class="max-w-screen w-full flex md:hidden bg-cover bg-right bg-no-repeat items-center relative" style="background-image: url(./img/background.png); background-size: cover; background-position: center;">            
+        <div class="max-w-screen bottom-0 left-0 max-w-sm absolute">
+            <img class="pl-5" src="./img/mememan.png">
+        </div>
+        <div class="max-w-screen w-full flex flex-col p-6 filter drop-shadow-2xl">
+            <div class="flex flex-col inset-x-0 bottom-16 pb-14 absolute">
+                <div class="flex w-full justify-center">
+                    <span class="text-white font-bold text-4xl"></span>
+                </div>
+                <div class="flex w-full justify-center">
+                    <span class="text-white font-bold text-2xl"></span>
+                </div>
+                <div class="flex w-full justify-center py-4">
+                    <button id="startButtonMobile" class="bg-yellow-500 px-2 py-2 text-1xl rounded-lg text-white shadow ring ring-yellow-500 ring-opacity-50 bg-gradient-to-b hover:from-yellow-400 hover:to-red-400">立刻使用預測</button>
+                </div>            
+            </div>
+            <div class="w-full py-80 flex justify-end px-6">
+                
+            </div>
+        </div>                            
+    </div>
+
+    <!-- about -->
+    <div id="about" class="max-w-screen flex justify-center py-16 md:py-24 bg-gray-100 p-2">
+        <div class="flex flex-col max-w-6xl bg-white rounded-lg shadow-lg">
+            <div class="p-6 pb-0 flex justify-center">
+                <div class="text-3xl md:text-4xl font-bold">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500">
+                        什麼是PEPE-AI百家
+                    </span>
+                </div>
+            </div>
+            <div class="px-4 py-4 flex flex-col">
+                <span class="text-base md:text-xl text-gray-700 p-4 pt-0">一群持有PEPE幣及喜愛博弈的同好，利用串聯GPT分析數據後，製作出的百家樂AI預測器，適用於KU、DG、電子類百家，透過分析前次棋盤路預測後續可能的走勢。</span>
+                <span class="text-base md:text-xl text-gray-700 p-4 pt-2">每天都有免費分析次數可以遊玩，請記得連接網路使用，達到最佳效果。</span>
+            </div>
+            <a id="upMobile"></a>
+        </div>
+    </div>
+
+    <!-- Up calender -->
+    <div id="up" class="max-w-screen flex flex-col justify-center bg-gray-100 md:py-24 md:bg-white p-2">
+        <div class="max-w-7xl mx-auto">
+            <div class="my-4 w-full flex justify-center" id="count-area">
+                今日剩餘次數：<span id="count"></span>
+            </div>
+            <div class="flex flex-row space-x-48">
+                <button class="p-8 rounded bg-blue-500 text-white font-bold text-8xl shadow-lg shadow-gray-700 transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-xl hover:shadow-gray-900" onclick="player()" id="player">閒</button>
+                <button class="p-8 rounded bg-green-500 text-white font-bold text-8xl shadow-lg shadow-gray-700 transition duration-150 ease-in-out hover:bg-green-600  hover:shadow-xl hover:shadow-gray-900" onclick="tie()" id="tie">和</button>
+                <button class="p-8 rounded bg-red-500 text-white font-bold text-8xl shadow-lg shadow-gray-700 transition duration-150 ease-in-out hover:bg-red-600  hover:shadow-xl hover:shadow-gray-900" onclick="banker()" id="banker">莊</button>
+            </div>
+            <div class="my-4 h-12 p-2 text-center" id="currentTextArea">
+            </div>
+            <span>本次預測下注順序...</span>
+            <div id="result" class="pt-12 h-24 w-full text-center space-x-4">
+            </div>
+        </div>
+    </div>
+
+    <!-- faq -->
+    <div id="faq" class="max-w-screen flex justify-center pt-6 md:pt-24">
+        <div class="max-w-6xl w-full faq bg-contain bg-no-repeat bg-left-bottom p-2" style="background-image: url(./img/stock-market.svg)">
+            <div class="w-full h-full bg-white bg-opacity-90 flex justify-center">
+                <div class="flex flex-col pb-24 px-2">
+                    <div class="flex justify-center"><span class="font-bold text-3xl md:text-4xl text-gray-700">說明&問題</span></div>                    
+                    <div class="flex flex-col py-2">                        
+                        <span class="py-4 font-bold text-xl md:text-3xl text-gray-500">網站製作出的預測結果可以相信嗎？</span>
+                        <span class="font-bold text-base md:text-xl text-gray-500">不能，本網站僅提供數據分析後結果，並不保證100%的準確度及正確性，請自行評估，控制好風險。</span>
+                    </div>
+                    <div class="flex flex-col py-2">
+                        <span class="py-4 font-bold text-xl md:text-3xl text-gray-500">如何開始使用PEPE-AI？</span>
+                        <ol class="list-decimal">
+                            <li class="ml-8 font-bold text-base md:text-xl text-gray-500">進入任何一局，等第一次開完獎後，利用上方按鈕把前四次的順序按出來。</li>
+                            <li class="ml-8 font-bold text-base md:text-xl text-gray-500">等待分析後，按照分析的結果從左開始依序下注並配合自己的注碼。</li>
+                            <li class="ml-8 font-bold text-base md:text-xl text-gray-500">遇到和局重複下注即可。</li>
+                            <li class="ml-8 font-bold text-base md:text-xl text-gray-500">只要有贏就是換房再次進行分析。</li>
+                            <li class="ml-8 font-bold text-base md:text-xl text-gray-500">請確認自己的止損止盈，小賭怡情。</li>
+                        </ol>
+                    </div>
+                    <div class="flex flex-col mt-2 space-y-2">
+                        <span class="font-bold text-base md:text-xl text-gray-500">※遊玩時，可以大喊PEPE！來提升勝率XD</span>
+                        <span class="font-bold text-base md:text-xl text-gray-500">「配注可參考1、3、7、15、31共五關」</span>
+                        <span class="font-bold text-base md:text-xl text-gray-500">「挑局數10~30左右的房間最佳」</span>
+                        <span class="font-bold text-base md:text-xl text-gray-500">「如遭遇兩次和局，可以思考止損不繼續下注」</span>
+                    </div>
+                    <div class="flex flex-col mt-4">
+                        <span class="font-bold text-base md:text-xl text-gray-500">本網站計算程式是利用數據隨機預測結果，不構成任何博弈投資建議。</span>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+</body>
+<footer>
+    <div class="max-w-screen bg-gray-500 flex justify-center">
+        <div class="max-w-6xl w-full flex justify-center p-1 text-white">
+            <span>&copy; Copyright <script>document.write(new Date().getFullYear())</script> <a href="#">PEPE-AI</a></span>
+        </div>
+    </div>
+</footer>
+</html>
+<script src="./js/ui.js"></script>
