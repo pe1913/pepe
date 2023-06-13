@@ -50,6 +50,19 @@ faqLinkMobile.addEventListener("click", ()=>{
     menu.classList.toggle("hidden");
 }, false);
 
+const donateLink = document.querySelector('#donateLink');
+const donateMobile = document.querySelector('#donateMobile');
+const donate = document.querySelector('#donate');
+
+donateLink.addEventListener("click", ()=>{
+    donate.scrollIntoView({ behavior: "smooth"});
+}, false);
+
+donateMobile.addEventListener("click", ()=>{
+    donate.scrollIntoView({ behavior: "smooth"});
+    menu.classList.toggle("hidden");
+}, false);
+
 const startButton = document.querySelectorAll("#startButton");
 startButton[0].addEventListener("click", ()=>{
     up.scrollIntoView({ behavior: "smooth"});
@@ -108,38 +121,38 @@ document.getElementById("count").innerHTML = count;
 let times = 0;
 let currentText = '';
 const randomCards = [
-    "<span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span>",
-    "<span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span>",
-    "<span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span>",
-    "<span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span>",
-    "<span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span>",
-    "<span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span>",
-    "<span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span>",
-    "<span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span>",
-    "<span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span>",
-    "<span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span>",
-    "<span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span>",
-    "<span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span>",
-    "<span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span>",
-    "<span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span>",
-    "<span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span>",
-    "<span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span>",
-    "<span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span>",
-    "<span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span>",
-    "<span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span>",
-    "<span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span>",
-    "<span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span>",
-    "<span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span>",
-    "<span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span>",
-    "<span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span>",
-    "<span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span>",
-    "<span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span>",
-    "<span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span>",
-    "<span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span>",
-    "<span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span>",
-    "<span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span>",
-    "<span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span>",
-    "<span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-red-500 text-6xl font-bold'>莊</span><span class='text-blue-500 text-6xl font-bold'>閒</span>",
+    "<span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span>",
+    "<span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span>",
+    "<span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span>",
+    "<span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span>",
+    "<span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span>",
+    "<span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span>",
+    "<span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span>",
+    "<span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span>",
+    "<span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span>",
+    "<span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span>",
+    "<span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span>",
+    "<span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span>",
+    "<span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span>",
+    "<span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span>",
+    "<span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span>",
+    "<span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span>",
+    "<span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span>",
+    "<span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span>",
+    "<span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span>",
+    "<span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span>",
+    "<span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span>",
+    "<span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span>",
+    "<span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span>",
+    "<span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span>",
+    "<span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span>",
+    "<span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span>",
+    "<span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span>",
+    "<span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span>",
+    "<span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span>",
+    "<span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span>",
+    "<span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span>",
+    "<span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span><span class='text-red-500 font-bold'>莊</span><span class='text-red-500 font-bold'>莊</span><span class='text-blue-500 font-bold'>閒</span>",
 ];
 
 function player() {
